@@ -6,8 +6,8 @@ export function Brand() {
   return <Link to="/" className="brand"><span className="truck">▰</span><span>Transvia</span></Link>;
 }
 
-export function Action({ children = "Get Started" }: { children?: string }) {
-  return <Link to="/" hash="contact" className="action"><span>{children}</span><b><ArrowUpRight size={17}/></b></Link>;
+export function Action({ children = "Get Started", to = "/contact" }: { children?: string; to?: string }) {
+  return <Link to={to} className="action"><span>{children}</span><b><ArrowUpRight size={17}/></b></Link>;
 }
 
 export function Eyebrow({ children }: { children: string }) {
@@ -15,7 +15,7 @@ export function Eyebrow({ children }: { children: string }) {
 }
 
 export function SiteHeader() {
-  return <header><div className="nav-wrap"><Brand/><nav><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/services">Service</Link><Link to="/" hash="blog">Blog</Link><Link to="/projects">Projects</Link></nav><Action/><button className="menu" aria-label="Open menu"><Menu/></button></div></header>;
+  return <header><div className="nav-wrap"><Brand/><nav><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/service">Service</Link><Link to="/blog">Blog</Link><Link to="/project">Projects</Link></nav><Action/><button className="menu" aria-label="Open menu"><Menu/></button></div></header>;
 }
 
 export function SiteCta() {
@@ -23,5 +23,5 @@ export function SiteCta() {
 }
 
 export function SiteFooter() {
-  return <footer><Brand/><p>Fast, reliable, and sustainable logistics solutions for modern businesses.</p><div><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link><Link to="/" hash="blog">Blog</Link></div><small>© 2026 Transvia. All rights reserved.</small></footer>;
+  return <footer><Brand/><p>Delivering reliable and efficient logistics solutions with a focus on speed, safety, and sustainability across every route.</p><div><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/service">Service</Link><Link to="/blog">Blog</Link><Link to="/project">Project</Link><Link to="/pricing">Pricing</Link><Link to="/team">Team</Link><Link to="/contact">Contact</Link></div><small>© 2026 Transvia. All rights reserved.</small></footer>;
 }
