@@ -3,7 +3,7 @@ import { Eyebrow, SiteCta, SiteFooter, SiteHeader } from "../../components/site-
 import hero from "../../assets/project-hero.png.asset.json";
 import one from "../../assets/project-one.jpg.asset.json"; import two from "../../assets/project-two.jpg.asset.json"; import three from "../../assets/project-three.png.asset.json"; import four from "../../assets/service-regional.jpg.asset.json"; import five from "../../assets/service-heavy.jpg.asset.json"; import six from "../../assets/service-express.jpg.asset.json";
 
-const items = [
+const items: [string, string, string, string, string][] = [
   [one.url, "multimodal-cargo-management", "Global", "Multimodal Cargo Management", "Road, rail, sea, and air logistics delivering flexible global supply chain solutions."],
   [two.url, "e-commerce-fulfillment-network", "Global", "E-Commerce Fulfillment Network", "Integrated order processing, inventory, packing, and last-mile delivery."],
   [three.url, "cold-chain-transportation", "Global", "Cold Chain Transportation", "Temperature-controlled logistics with continuous monitoring."],

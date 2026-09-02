@@ -6,7 +6,7 @@ import blog3 from "../../assets/blog-3.png.asset.json"; import blog4 from "../..
 import blog5 from "../../assets/blog-5.png.asset.json"; import blog6 from "../../assets/blog-6.png.asset.json";
 import blog7 from "../../assets/blog-7.jpg.asset.json"; import blog8 from "../../assets/blog-8.jpg.asset.json";
 
-const posts = [
+const posts: [string, string, string, string][] = [
   [blogOne.url, "common-logistics-challenges-and-solutions-for-growing-companies", "May 26, 2026", "Common Logistics Challenges and Solutions for Growing Companies"],
   [blogTwo.url, "best-logistics-management-techniques-for-small-business-operations", "May 24, 2026", "Best Logistics Management Techniques for Small Business Operations"],
   [blog3.url, "essential-supply-chain-practices-for-business-success-today", "May 22, 2026", "Essential Supply Chain Practices for Business Success Today"],
