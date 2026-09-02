@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, ChevronDown, Quote } from "lucide-react";
 import { Action, Eyebrow, SiteFooter, SiteHeader } from "../components/site-chrome";
 import hero from "../assets/hero.jpg.asset.json";
@@ -26,14 +26,14 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const services = [
-  [heavy.url, "Heavy Equipment Logistics"], [temp.url, "Temperature-Controlled Shipping"],
-  [regional.url, "Regional Cargo Transport"], [express.url, "Express Freight Delivery"],
+const services: [string, string, string][] = [
+  [heavy.url, "heavy-equipment-logistics", "Heavy Equipment Logistics"], [temp.url, "temperature-controlled-shipping", "Temperature-Controlled Shipping"],
+  [regional.url, "regional-cargo-transport", "Regional Cargo Transport"], [express.url, "express-freight-delivery", "Express Freight Delivery"],
 ];
-const projects = [
-  [projectOne.url, "Multimodal Cargo Management", "Comprehensive cargo transportation combining road, rail, sea, and air logistics."],
-  [projectTwo.url, "E-Commerce Fulfillment Network", "Integrated fulfillment solutions supporting inventory, packing, and last-mile delivery."],
-  [projectThree.url, "Cold Chain Transportation", "Temperature-controlled logistics preserving product quality through every mile."],
+const projects: [string, string, string, string][] = [
+  [projectOne.url, "multimodal-cargo-management", "Multimodal Cargo Management", "Comprehensive cargo transportation combining road, rail, sea, and air logistics."],
+  [projectTwo.url, "e-commerce-fulfillment-network", "E-Commerce Fulfillment Network", "Integrated fulfillment solutions supporting inventory, packing, and last-mile delivery."],
+  [projectThree.url, "cold-chain-transportation", "Cold Chain Transportation", "Temperature-controlled logistics preserving product quality through every mile."],
 ];
 const faqs = [
   ["What types of goods do you transport?", "We handle commercial goods, industrial materials, and packaged products across all routes."],
