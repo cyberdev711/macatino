@@ -1,5 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, ChevronDown, Menu, Quote } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArrowUpRight, ChevronDown, Quote } from "lucide-react";
+import { Action, Eyebrow, SiteFooter, SiteHeader } from "../components/site-chrome";
 import hero from "../assets/hero.jpg.asset.json";
 import heavy from "../assets/service-heavy.jpg.asset.json";
 import temp from "../assets/service-temp.jpg.asset.json";
@@ -41,13 +42,9 @@ const faqs = [
   ["How do you ensure the safety of goods?", "Strict handling, secure packaging, and continuous monitoring protect every shipment."],
 ];
 
-function Brand() { return <a href="#top" className="brand"><span className="truck">▰</span><span>Transvia</span></a>; }
-function Action({ children = "Get Started" }: { children?: string }) { return <a href="#contact" className="action"><span>{children}</span><b><ArrowUpRight size={17}/></b></a>; }
-function Eyebrow({ children }: { children: string }) { return <p className="eyebrow"><span>//</span>{children}<span>//</span></p>; }
-
 function Index() {
   return <main id="top">
-    <header><div className="nav-wrap"><Brand/><nav><a href="#top">Home</a><a href="#about">About</a><a href="#services">Service</a><a href="#blog">Blog</a><a href="#projects">Projects</a></nav><Action/><button className="menu" aria-label="Open menu"><Menu/></button></div></header>
+    <SiteHeader/>
     <section className="hero" style={{ backgroundImage: `linear-gradient(90deg, var(--overlay-strong), var(--overlay-soft)), url(${hero.url})` }}>
       <div className="hero-inner reveal"><h1>Fast &amp; Sustainable<br/>Road Freight Solutions</h1><p>Reliable logistics solutions designed for speed, safety, and sustainability—moving your cargo efficiently across every mile.</p><Action/></div>
     </section>
@@ -69,6 +66,6 @@ function Index() {
     <section id="blog" className="section blog"><Eyebrow>Our Blog</Eyebrow><h2>Stay Informed with Logistics Trends and Insights</h2><div className="blog-grid">{[[blogOne.url,"May 26, 2026","Common Logistics Challenges and Solutions for Growing Companies"],[blogTwo.url,"May 24, 2026","Best Logistics Management Techniques for Small Business Operations"]].map(x=><article key={x[2]}><img src={x[0]} alt={x[2]}/><span>{x[1]}</span><h3>{x[2]}</h3></article>)}</div></section>
 
     <section id="contact" className="cta" style={{ backgroundImage:`linear-gradient(var(--overlay-strong),var(--overlay-strong)),url(${cta.url})` }}><Eyebrow>LET'S MOVE</Eyebrow><h2>Start Your Next Delivery Today</h2><p>Let our expert logistics team handle your shipment with precision, speed, and complete transparency.</p><Action>Request a Quote</Action></section>
-    <footer><Brand/><p>Fast, reliable, and sustainable logistics solutions for modern businesses.</p><div><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#blog">Blog</a></div><small>© 2026 Transvia. All rights reserved.</small></footer>
+    <SiteFooter/>
   </main>;
 }
