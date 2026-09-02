@@ -11,8 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as ProjectIndexRouteImport } from './routes/project/index'
+import { Route as ProjectSlugRouteImport } from './routes/project/$slug'
+import { Route as ServiceIndexRouteImport } from './routes/service/index'
+import { Route as ServiceSlugRouteImport } from './routes/service/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -24,49 +31,146 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectIndexRoute = ProjectIndexRouteImport.update({
+  id: '/project/',
+  path: '/project/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectSlugRoute = ProjectSlugRouteImport.update({
+  id: '/project/$slug',
+  path: '/project/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceIndexRoute = ServiceIndexRouteImport.update({
+  id: '/service/',
+  path: '/service/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceSlugRoute = ServiceSlugRouteImport.update({
+  id: '/service/$slug',
+  path: '/service/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
+  '/contact': typeof ContactRoute
+  '/pricing': typeof PricingRoute
+  '/team': typeof TeamRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/project/$slug': typeof ProjectSlugRoute
+  '/service/$slug': typeof ServiceSlugRoute
+  '/blog/': typeof BlogIndexRoute
+  '/project/': typeof ProjectIndexRoute
+  '/service/': typeof ServiceIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
+  '/contact': typeof ContactRoute
+  '/pricing': typeof PricingRoute
+  '/team': typeof TeamRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/project/$slug': typeof ProjectSlugRoute
+  '/service/$slug': typeof ServiceSlugRoute
+  '/blog': typeof BlogIndexRoute
+  '/project': typeof ProjectIndexRoute
+  '/service': typeof ServiceIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
+  '/contact': typeof ContactRoute
+  '/pricing': typeof PricingRoute
+  '/team': typeof TeamRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/project/$slug': typeof ProjectSlugRoute
+  '/service/$slug': typeof ServiceSlugRoute
+  '/blog/': typeof BlogIndexRoute
+  '/project/': typeof ProjectIndexRoute
+  '/service/': typeof ServiceIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/projects' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/pricing'
+    | '/team'
+    | '/blog/$slug'
+    | '/project/$slug'
+    | '/service/$slug'
+    | '/blog/'
+    | '/project/'
+    | '/service/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/projects' | '/services'
-  id: '__root__' | '/' | '/about' | '/projects' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/pricing'
+    | '/team'
+    | '/blog/$slug'
+    | '/project/$slug'
+    | '/service/$slug'
+    | '/blog'
+    | '/project'
+    | '/service'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/pricing'
+    | '/team'
+    | '/blog/$slug'
+    | '/project/$slug'
+    | '/service/$slug'
+    | '/blog/'
+    | '/project/'
+    | '/service/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ProjectsRoute: typeof ProjectsRoute
-  ServicesRoute: typeof ServicesRoute
+  ContactRoute: typeof ContactRoute
+  PricingRoute: typeof PricingRoute
+  TeamRoute: typeof TeamRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  ProjectSlugRoute: typeof ProjectSlugRoute
+  ServiceSlugRoute: typeof ServiceSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+  ProjectIndexRoute: typeof ProjectIndexRoute
+  ServiceIndexRoute: typeof ServiceIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -85,18 +189,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/': {
+      id: '/project/'
+      path: '/project'
+      fullPath: '/project/'
+      preLoaderRoute: typeof ProjectIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/$slug': {
+      id: '/project/$slug'
+      path: '/project/$slug'
+      fullPath: '/project/$slug'
+      preLoaderRoute: typeof ProjectSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service/': {
+      id: '/service/'
+      path: '/service'
+      fullPath: '/service/'
+      preLoaderRoute: typeof ServiceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service/$slug': {
+      id: '/service/$slug'
+      path: '/service/$slug'
+      fullPath: '/service/$slug'
+      preLoaderRoute: typeof ServiceSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -105,8 +258,15 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ProjectsRoute: ProjectsRoute,
-  ServicesRoute: ServicesRoute,
+  ContactRoute: ContactRoute,
+  PricingRoute: PricingRoute,
+  TeamRoute: TeamRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  ProjectSlugRoute: ProjectSlugRoute,
+  ServiceSlugRoute: ServiceSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+  ProjectIndexRoute: ProjectIndexRoute,
+  ServiceIndexRoute: ServiceIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

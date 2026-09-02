@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, ChevronDown, Quote } from "lucide-react";
 import { Action, Eyebrow, SiteFooter, SiteHeader } from "../components/site-chrome";
 import hero from "../assets/hero.jpg.asset.json";
@@ -26,14 +26,14 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const services = [
-  [heavy.url, "Heavy Equipment Logistics"], [temp.url, "Temperature-Controlled Shipping"],
-  [regional.url, "Regional Cargo Transport"], [express.url, "Express Freight Delivery"],
+const services: [string, string, string][] = [
+  [heavy.url, "heavy-equipment-logistics", "Heavy Equipment Logistics"], [temp.url, "temperature-controlled-shipping", "Temperature-Controlled Shipping"],
+  [regional.url, "regional-cargo-transport", "Regional Cargo Transport"], [express.url, "express-freight-delivery", "Express Freight Delivery"],
 ];
-const projects = [
-  [projectOne.url, "Multimodal Cargo Management", "Comprehensive cargo transportation combining road, rail, sea, and air logistics."],
-  [projectTwo.url, "E-Commerce Fulfillment Network", "Integrated fulfillment solutions supporting inventory, packing, and last-mile delivery."],
-  [projectThree.url, "Cold Chain Transportation", "Temperature-controlled logistics preserving product quality through every mile."],
+const projects: [string, string, string, string][] = [
+  [projectOne.url, "multimodal-cargo-management", "Multimodal Cargo Management", "Comprehensive cargo transportation combining road, rail, sea, and air logistics."],
+  [projectTwo.url, "e-commerce-fulfillment-network", "E-Commerce Fulfillment Network", "Integrated fulfillment solutions supporting inventory, packing, and last-mile delivery."],
+  [projectThree.url, "cold-chain-transportation", "Cold Chain Transportation", "Temperature-controlled logistics preserving product quality through every mile."],
 ];
 const faqs = [
   ["What types of goods do you transport?", "We handle commercial goods, industrial materials, and packaged products across all routes."],
@@ -51,11 +51,11 @@ function Index() {
 
     <section id="about" className="section intro"><Eyebrow>ABOUT US</Eyebrow><h2>Delivering more than just cargo—we drive efficiency, reliability, and sustainable logistics solutions that power businesses forward and keep supply chains moving without interruption.</h2><div className="stats"><div><strong>12K+</strong><span>Shipments Delivered</span></div><div><strong>98%</strong><span>Delivery Rate</span></div><div><strong>120+</strong><span>Logistics Partners</span></div></div></section>
 
-    <section id="services" className="section dark-band"><Eyebrow>Our Services</Eyebrow><h2>Comprehensive Logistics Solutions Built for Speed and Reliability</h2><div className="service-grid">{services.map(([img,title],i)=><article className="service" key={title}><img src={img} alt={title}/><div><span>0{i+1}</span><h3>{title}</h3><ArrowUpRight/></div></article>)}</div></section>
+    <section id="services" className="section dark-band"><Eyebrow>Our Services</Eyebrow><h2>Comprehensive Logistics Solutions Built for Speed and Reliability</h2><div className="service-grid">{services.map(([img,slug,title],i)=><Link to="/service/$slug" params={{slug}} key={title}><article className="service"><img src={img} alt={title}/><div><span>0{i+1}</span><h3>{title}</h3><ArrowUpRight/></div></article></Link>)}</div></section>
 
     <section className="section works"><Eyebrow>How It Works</Eyebrow><h2>How We Move Your Shipments with Precision and Care</h2><div className="work-grid"><img src={process.url} alt="Cargo logistics facility"/><div className="steps">{[["01","Smart Order Initiation","We capture your shipment details accurately, defining every requirement from the start."],["02","Efficient Handling & Transit","From pickup to routing, your cargo is managed with optimized and secure systems."],["03","Real-Time Tracking & Delivery","Stay informed at every step with live updates and complete delivery confirmation."]].map(x=><div className="step" key={x[0]}><span>{x[0]}</span><div><h3>{x[1]}</h3><p>{x[2]}</p></div></div>)}</div></div></section>
 
-    <section id="projects" className="section projects"><Eyebrow>Our Projects</Eyebrow><h2>Powering Smarter Transport Through Proven Logistics Projects</h2><div className="project-grid">{projects.map(([img,title,copy])=><article className="project" key={title}><div className="project-img"><img src={img} alt={title}/><span>Global</span></div><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
+    <section id="projects" className="section projects"><Eyebrow>Our Projects</Eyebrow><h2>Powering Smarter Transport Through Proven Logistics Projects</h2><div className="project-grid">{projects.map(([img,slug,title,copy])=><Link to="/project/$slug" params={{slug}} key={title}><article className="project"><div className="project-img"><img src={img} alt={title}/><span>Global</span></div><h3>{title}</h3><p>{copy}</p></article></Link>)}</div></section>
 
     <section className="section why"><Eyebrow>Why Choose Us</Eyebrow><h2>Why Businesses Choose Us For Their Logistics &amp; Shipping</h2><div className="why-grid">{[["01","Fast & Secure Delivery"],["02","Secure Cargo Handling"],["03","Real-Time Tracking System"]].map(([n,t])=><article key={n}><span>{n}</span><h3>{t}</h3><p>Reliable, carefully managed logistics with complete visibility throughout every stage of transportation.</p></article>)}</div></section>
 
@@ -63,7 +63,7 @@ function Index() {
 
     <section className="section faq"><Eyebrow>FAQ</Eyebrow><h2>Answers to Common Questions About Our Logistics</h2><div>{faqs.map((f,i)=><details key={f[0]}><summary><span>0{i+1}</span>{f[0]}<ChevronDown/></summary><p>{f[1]}</p></details>)}</div></section>
 
-    <section id="blog" className="section blog"><Eyebrow>Our Blog</Eyebrow><h2>Stay Informed with Logistics Trends and Insights</h2><div className="blog-grid">{[[blogOne.url,"May 26, 2026","Common Logistics Challenges and Solutions for Growing Companies"],[blogTwo.url,"May 24, 2026","Best Logistics Management Techniques for Small Business Operations"]].map(x=><article key={x[2]}><img src={x[0]} alt={x[2]}/><span>{x[1]}</span><h3>{x[2]}</h3></article>)}</div></section>
+    <section id="blog" className="section blog"><Eyebrow>Our Blog</Eyebrow><h2>Stay Informed with Logistics Trends and Insights</h2><div className="blog-grid">{([["common-logistics-challenges-and-solutions-for-growing-companies",blogOne.url,"May 26, 2026","Common Logistics Challenges and Solutions for Growing Companies"],["best-logistics-management-techniques-for-small-business-operations",blogTwo.url,"May 24, 2026","Best Logistics Management Techniques for Small Business Operations"]] as [string,string,string,string][]).map(x=><Link to="/blog/$slug" params={{slug:x[0]}} key={x[3]}><article><img src={x[1]} alt={x[3]}/><span>{x[2]}</span><h3>{x[3]}</h3></article></Link>)}</div></section>
 
     <section id="contact" className="cta" style={{ backgroundImage:`linear-gradient(var(--overlay-strong),var(--overlay-strong)),url(${cta.url})` }}><Eyebrow>LET'S MOVE</Eyebrow><h2>Start Your Next Delivery Today</h2><p>Let our expert logistics team handle your shipment with precision, speed, and complete transparency.</p><Action>Request a Quote</Action></section>
     <SiteFooter/>
