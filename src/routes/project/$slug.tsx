@@ -14,8 +14,8 @@ const projects = {
 
 export const Route = createFileRoute("/project/$slug")({
   head: ({ params }) => ({ meta: [
-    { title: `${projects[params.slug as keyof typeof projects]?.title || "Project"} | Transvia` },
-    { name: "description", content: projects[params.slug as keyof typeof projects]?.subtitle || "Transvia logistics projects." },
+    { title: `${projects[params.slug as keyof typeof projects]?.title || "Industry"} | MACOTINO` },
+    { name: "description", content: projects[params.slug as keyof typeof projects]?.subtitle || "MACOTINO logistics and cargo support." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ]}),
   component: ProjectDetail,
@@ -27,19 +27,19 @@ function ProjectDetail() {
   if (!p) return <main><SiteHeader/><section className="section"><p>Project not found.</p><Link to="/project">Back to projects</Link></section><SiteFooter/></main>;
   return <main><SiteHeader/>
     <section className="detail-hero" style={{ backgroundImage: `linear-gradient(180deg,transparent,var(--overlay-strong)),url(${p.hero})` }}>
-      <div className="detail-hero-inner"><Eyebrow>Project Detail</Eyebrow><h1>{p.title}</h1><p>{p.subtitle}</p></div>
+      <div className="detail-hero-inner"><Eyebrow>Industry Support</Eyebrow><h1>{p.title}</h1><p>{p.subtitle}</p></div>
     </section>
     <section className="detail-body">
       <h3>Overview</h3>
-      <p>The International Transport Solutions project provides global logistics support for businesses requiring secure and efficient cross-border transportation services. Our international shipping operations are designed to simplify complex logistics processes while ensuring reliable cargo movement between countries and global trade regions.</p>
+      <p>MACOTINO Global Limited provides comprehensive cargo movement, customs clearance, and supply chain support for businesses across multiple industries.</p>
       <h3>Global Shipping Operations</h3>
-      <p>We manage international transportation through carefully planned shipping routes, customs coordination, and freight handling systems. By maintaining strong operational partnerships and organized logistics management, we ensure smooth cargo transportation across international markets and transportation networks.</p>
+      <p>We coordinate freight movement through sea, air, and land channels while supporting efficient cargo handling throughout Nigeria's ports and supply chain network.</p>
       <h3>Customs & Compliance</h3>
-      <p>International logistics requires strict compliance with shipping regulations, customs documentation, and cargo inspection standards. Our experienced logistics team handles all necessary documentation and regulatory processes to reduce shipping delays and maintain efficient cross-border transportation operations.</p>
+      <p>Our team supports fast and compliant customs documentation and cargo release procedures, helping clients navigate international trade requirements with confidence.</p>
       <h3>Tracking & Security</h3>
-      <p>To maintain shipment visibility and cargo protection, we use advanced tracking technologies and secure freight management systems. Clients receive real-time updates throughout the shipping process, providing complete transparency and confidence in international delivery operations.</p>
+      <p>Every shipment is handled with professionalism, precision, compliance, and attention to detail.</p>
       <h3>Project Success</h3>
-      <p>The International Transport Solutions project successfully improved global shipping efficiency, reduced transportation delays, and enhanced delivery reliability for international clients. Businesses benefited from streamlined logistics coordination, secure cargo handling, and dependable transportation support across global markets.</p>
+      <p>Our bonded terminal and logistics solutions help reduce delays, improve operational efficiency, and provide dependable support for each client's unique requirements.</p>
     </section>
     <SiteCta/><SiteFooter/>
   </main>;

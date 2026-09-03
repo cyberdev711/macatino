@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Eyebrow, SiteCta, SiteFooter, SiteHeader } from "../../components/site-chrome";
 import hero from "../../assets/service-hero.png.asset.json";
-import heavy from "../../assets/service-heavy.jpg.asset.json"; import temp from "../../assets/service-temp.jpg.asset.json"; import regional from "../../assets/service-regional.jpg.asset.json"; import express from "../../assets/service-express.jpg.asset.json"; import five from "../../assets/service-five.jpg.asset.json"; import six from "../../assets/service-six.png.asset.json"; import seven from "../../assets/service-seven.jpg.asset.json"; import eight from "../../assets/service-eight.jpg.asset.json";
+import heavy from "../../assets/service-heavy.jpg.asset.json"; import temp from "../../assets/service-temp.jpg.asset.json"; import regional from "../../assets/service-regional.jpg.asset.json"; import express from "../../assets/service-express.jpg.asset.json"; import five from "../../assets/service-five.jpg.asset.json";
 
 const items: [string, string, string][] = [
   [heavy.url, "heavy-equipment-logistics", "Freight Forwarding"],

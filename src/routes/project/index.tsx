@@ -14,15 +14,15 @@ const items: [string, string, string, string, string][] = [
 
 export const Route = createFileRoute("/project/")({
   head: () => ({ meta: [
-    { title: "Logistics Projects | Transvia" },
-    { name: "description", content: "Explore proven Transvia transport and logistics projects across diverse industries." },
-    { property: "og:title", content: "Logistics Projects | Transvia" },
+    { title: "Industries Served | MACOTINO" },
+    { name: "description", content: "MACOTINO supports oil and gas, manufacturing, construction, agriculture, retail, distribution, and international trade." },
+    { property: "og:title", content: "Industries Served | MACOTINO" },
     { property: "og:description", content: "Successful logistics projects built on strategy and operational excellence." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ]}), component: ProjectsPage,
 });
 
 function ProjectsPage() {
-  return <main><SiteHeader/><section className="sub-hero" style={{ backgroundImage: `linear-gradient(90deg,var(--overlay-strong),var(--overlay-soft)),url(${hero.url})` }}><div className="sub-hero-inner reveal"><Eyebrow>Project</Eyebrow><h1>Reliable Distribution<br/>Planning System</h1></div></section>
-    <section className="section project-page"><h2>Powering Smarter Transport Through Proven Logistics Projects</h2><p className="lead">Explore our successful logistics projects that demonstrate innovative strategies, operational excellence, and reliable transportation solutions across diverse industries.</p><div className="project-grid">{items.map(([img, slug, tag, title, copy]) => <Link to="/project/$slug" params={{ slug }} key={title}><article className="project"><div className="project-img"><img src={img} alt={title}/><span>{tag}</span></div><h3>{title}</h3><p>{copy}</p></article></Link>)}</div></section><SiteCta/><SiteFooter/></main>;
+  return <main><SiteHeader/><section className="sub-hero" style={{ backgroundImage: `linear-gradient(90deg,var(--overlay-strong),var(--overlay-soft)),url(${hero.url})` }}><div className="sub-hero-inner reveal"><Eyebrow>Industries Served</Eyebrow><h1>Supporting Businesses<br/>Across Key Industries</h1></div></section>
+    <section className="section project-page"><h2>Dependable Logistics for Diverse Operations</h2><p className="lead">MACOTINO provides cargo movement and supply chain support tailored to the requirements of businesses across Nigeria.</p><div className="project-grid">{items.map(([img, slug], index) => { const industries = ["Oil & Gas", "Manufacturing", "Construction", "Agriculture", "Retail & Distribution", "Import & Export Businesses"]; const title = industries[index]; return <Link to="/project/$slug" params={{ slug }} key={title}><article className="project"><div className="project-img"><img src={img} alt={title}/><span>Industry</span></div><h3>{title}</h3><p>Professional logistics and cargo support tailored to the needs of {title?.toLowerCase()}.</p></article></Link>; })}</div></section><SiteCta/><SiteFooter/></main>;
 }
