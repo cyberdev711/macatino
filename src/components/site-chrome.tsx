@@ -3,10 +3,10 @@ import { ArrowUpRight, Menu } from "lucide-react";
 import cta from "../assets/cta.png.asset.json";
 
 export function Brand() {
-  return <Link to="/" className="brand"><span className="truck">▰</span><span>Transvia</span></Link>;
+  return <Link to="/" className="brand"><span className="truck">▰</span><span>MACOTINO</span></Link>;
 }
 
-export function Action({ children = "Get Started", to = "/contact" }: { children?: string; to?: string }) {
+export function Action({ children = "Request Consultation", to = "/contact" }: { children?: string; to?: string }) {
   return <Link to={to} className="action"><span>{children}</span><b><ArrowUpRight size={17}/></b></Link>;
 }
 
@@ -19,9 +19,9 @@ export function SiteHeader() {
 }
 
 export function SiteCta() {
-  return <section id="contact" className="cta" style={{ backgroundImage:`linear-gradient(var(--overlay-strong),var(--overlay-strong)),url(${cta.url})` }}><Eyebrow>LET'S MOVE</Eyebrow><h2>Start Your Next Delivery Today</h2><p>Let our expert logistics team handle your shipment with precision, speed, and complete transparency.</p><Action>Request a Quote</Action></section>;
+  return <section id="contact" className="cta" style={{ backgroundImage:`linear-gradient(var(--overlay-strong),var(--overlay-strong)),url(${cta.url})` }}><Eyebrow>CONTACT US</Eyebrow><h2>Let's Discuss Your Logistics Requirements</h2><p>Whether you require freight forwarding, customs clearance, bonded terminal support, or logistics services, our team is ready to help.</p><Action>Contact Us</Action></section>;
 }
 
 export function SiteFooter() {
-  return <footer><Brand/><p>Delivering reliable and efficient logistics solutions with a focus on speed, safety, and sustainability across every route.</p><div><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/service">Service</Link><Link to="/blog">Blog</Link><Link to="/project">Project</Link><Link to="/pricing">Pricing</Link><Link to="/team">Team</Link><Link to="/contact">Contact</Link></div><small>© 2026 Transvia. All rights reserved.</small></footer>;
+  return <footer><Brand/><p>Trusted freight forwarding, customs clearance, cargo handling, and supply chain support across Nigeria.</p><div><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/service">Services</Link><Link to="/blog">Blog</Link><Link to="/project">Projects</Link><Link to="/pricing">Pricing</Link><Link to="/team">Team</Link><Link to="/contact">Contact</Link></div><small>© 2026 MACOTINO Global Limited. All rights reserved.</small></footer>;
 }
