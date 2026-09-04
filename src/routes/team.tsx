@@ -16,10 +16,10 @@ const members = [
 
 export const Route = createFileRoute("/team")({
   head: () => ({ meta: [
-    { title: "Our Team | Transvia Logistics" },
-    { name: "description", content: "Meet the experienced logistics professionals behind Transvia's reliable delivery operations." },
-    { property: "og:title", content: "Our Team | Transvia Logistics" },
-    { property: "og:description", content: "Meet the experienced logistics professionals behind Transvia's reliable delivery operations." },
+    { title: "Our Team | MACOTINO Global Limited" },
+    { name: "description", content: "Meet the experienced logistics professionals behind MACOTINO's reliable delivery operations." },
+    { property: "og:title", content: "Our Team | MACOTINO Global Limited" },
+    { property: "og:description", content: "Meet the experienced logistics professionals behind MACOTINO's reliable delivery operations." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ]}), component: TeamPage,
 });
