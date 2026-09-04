@@ -30,8 +30,8 @@ const posts: Record<string, { date: string; title: string; sections: [string, st
 
 export const Route = createFileRoute("/blog/$slug")({
   head: ({ params }) => ({ meta: [
-    { title: `${posts[params.slug]?.title || "Blog Post"} | Transvia` },
-    { name: "description", content: "Transvia logistics blog — expert insights and industry updates." },
+    { title: `${posts[params.slug]?.title || "Blog Post"} | MACOTINO` },
+    { name: "description", content: "MACOTINO logistics blog — expert insights and industry updates." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ]}),
   component: BlogDetail,

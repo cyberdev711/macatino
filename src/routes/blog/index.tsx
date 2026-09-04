@@ -19,9 +19,9 @@ const posts: [string, string, string, string][] = [
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({ meta: [
-    { title: "Blog | Transvia Logistics Insights" },
+    { title: "Blog | MACOTINO Global Limited Insights" },
     { name: "description", content: "Expert articles, industry updates, and practical insights on logistics and transportation." },
-    { property: "og:title", content: "Blog | Transvia Logistics Insights" },
+    { property: "og:title", content: "Blog | MACOTINO Global Limited Insights" },
     { property: "og:description", content: "Expert articles, industry updates, and practical insights on logistics and transportation." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ]}), component: BlogPage,

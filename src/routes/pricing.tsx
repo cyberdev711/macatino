@@ -21,16 +21,16 @@ const compareRows = [
 ];
 
 const testimonials = [
-  { text: "Transvia delivers on time with reliable tracking and smooth logistics every step of the way.", name: "Michael Carter", role: "Supply Chain Manager" },
+  { text: "MACOTINO delivers on time with reliable tracking and smooth logistics every step of the way.", name: "Michael Carter", role: "Supply Chain Manager" },
   { text: "Reliable service, safe handling, and always on-time delivery. Highly recommended.", name: "Daniel Foster", role: "Supply Chain Manager" },
   { text: "Excellent service with safe handling and fast, consistent delivery. Highly recommended.", name: "Sarah Johnson", role: "Operations Director" },
 ];
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({ meta: [
-    { title: "Pricing | Transvia Logistics Plans" },
+    { title: "Pricing | MACOTINO Global Limited Plans" },
     { name: "description", content: "Transparent logistics pricing plans for personal shipments and enterprise-level operations." },
-    { property: "og:title", content: "Pricing | Transvia Logistics Plans" },
+    { property: "og:title", content: "Pricing | MACOTINO Global Limited Plans" },
     { property: "og:description", content: "Transparent logistics pricing plans for personal shipments and enterprise-level operations." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ]}), component: PricingPage,
@@ -46,7 +46,7 @@ function PricingPage() {
     <section className="section"><Eyebrow>Compare</Eyebrow><h2>Compare our Solution</h2><p className="lead">Discover how our reliable logistics solutions deliver greater efficiency, transparency, and value compared to traditional transportation services.</p>
       <table className="compare-table"><thead><tr><th>Features</th><th>Basic</th><th>Premium</th><th>Standard</th></tr></thead><tbody>{compareRows.map(r => <tr key={r[0]}><td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td><td>{r[3]}</td></tr>)}</tbody></table>
     </section>
-    <section className="section dark-band"><Eyebrow>Business</Eyebrow><h2>Why Businesses Choose Transvia</h2><div className="feature-grid">{[["Real-Time Tracking","Monitor shipments at every stage with complete transparency."],["Global Coverage","Access reliable transportation networks across international borders worldwide."],["Fast Delivery","Optimized routes and efficient operations ensure timely arrivals always."],["Dedicated Support","Expert logistics professionals available whenever you need expert support."]].map((x, i) => <article key={x[0]}><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div></section>
+    <section className="section dark-band"><Eyebrow>Business</Eyebrow><h2>Why Businesses Choose MACOTINO</h2><div className="feature-grid">{[["Real-Time Tracking","Monitor shipments at every stage with complete transparency."],["Global Coverage","Access reliable transportation networks across international borders worldwide."],["Fast Delivery","Optimized routes and efficient operations ensure timely arrivals always."],["Dedicated Support","Expert logistics professionals available whenever you need expert support."]].map((x, i) => <article key={x[0]}><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div></section>
     <section className="section"><Eyebrow>Testimonials</Eyebrow><h2>What Our Clients Say About Our Logistics Services</h2><div className="testimonial-slider">{testimonials.map(t => <div className="testimonial-card" key={t.name}><Quote/><h3>"{t.text}"</h3><div><b>{t.name}</b><span>{t.role}</span></div></div>)}</div></section>
     <SiteCta/><SiteFooter/>
   </main>;
