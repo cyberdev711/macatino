@@ -15,7 +15,7 @@ export function Eyebrow({ children }: { children: string }) {
 }
 
 export function SiteHeader() {
-  return <header><div className="nav-wrap"><Brand/><nav><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/service">Service</Link><Link to="/blog">Blog</Link><Link to="/project">Projects</Link></nav><Action/><button className="menu" aria-label="Open menu"><Menu/></button></div></header>;
+  return <header><div className="nav-wrap"><Brand/><nav><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/service">Service</Link><Link to="/project">Projects</Link><Link to="/contact">Contact</Link></nav><Action/><button className="menu" aria-label="Open menu"><Menu/></button></div></header>;
 }
 
 export function SiteCta() {
